@@ -1,6 +1,6 @@
 extends AnimatedSprite
 
-var current_blood = 80
+var current_blood = 50
 var current_pain = 0
 var bleeds = 2
 #onready var maths = 5 * 4

@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://health_bar_border.png" type="Texture" id=1]
 [ext_resource path="res://health_bar_progress.png" type="Texture" id=2]
 [ext_resource path="res://bar_blood.gd" type="Script" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://sword.png" type="Texture" id=5]
+[ext_resource path="res://Enemy.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Battle" type="Node2D"]
 
@@ -27,7 +37,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Enemy" type="AnimatedSprite" parent="InScope"]
+script = ExtResource( 6 )
+
 [node name="VBox_BattleActions" type="VBoxContainer" parent="InScope"]
+visible = false
 margin_left = 215.0
 margin_top = 403.0
 margin_right = 267.0
@@ -73,3 +87,45 @@ margin_bottom = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="attack_TR" type="AnimatedSprite" parent="InScope"]
+visible = false
+position = Vector2( 841, 231 )
+rotation = 2.47139
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="attack_BL" type="AnimatedSprite" parent="InScope"]
+visible = false
+position = Vector2( 290, 478 )
+rotation = 2.47139
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="attack_B" type="AnimatedSprite" parent="InScope"]
+visible = false
+position = Vector2( 589, 473 )
+rotation = 2.47139
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="attack_BR" type="AnimatedSprite" parent="InScope"]
+visible = false
+position = Vector2( 848, 460 )
+rotation = 2.47139
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="attack_T" type="AnimatedSprite" parent="InScope"]
+visible = false
+position = Vector2( 556, 237 )
+rotation = 2.47139
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="attack_TL" type="AnimatedSprite" parent="InScope"]
+visible = false
+position = Vector2( 289, 261 )
+rotation = 2.47139
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
