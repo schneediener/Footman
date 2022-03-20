@@ -1,12 +1,17 @@
 extends Node2D
 #
+var enemy_attack = preload("res://enemy_attack.tscn")
+onready var spawn_container = $InScope/spawn_container
+
+func _ready() -> void:
+	randomize()
 #var Enemy = preload ("res://Soldier.tscn")
 #
 #onready var enemy_container = $SoldierContainer
 #onready var spawner = $Spawner
 #onready var spawn_timer = $SpawnTimer
 #
-#var active_command = null
+#var active_command = nullS
 #var current_letter_index: int = -1
 #
 #
@@ -55,3 +60,16 @@ extends Node2D
 #	var index = randi() % spawns.size()
 #	enemy_container.add_child(enemy_instance)
 #	enemy_instance.global_position = spawns[index].global_position
+
+
+func _on_spawn_timer_timeout() -> void:
+	spawn_enemy_attack()
+	
+func spawn_enemy_attack() -> void:
+	var enemy_attack_instance = enemy_attack.instance() 
+	var enemy_attack_container = $enemy_attack_container
+	var positions = spawn_container.get_children()
+	var index = randi() % positions.size()
+	
+	enemy_attack_container.add_child(enemy_attack_instance)
+	enemy_attack_instance.global_position = positions[index].global_position

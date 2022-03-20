@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sword.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="enemy_attack" type="AnimatedSprite"]
+position = Vector2( 1.66669, -36.6667 )
+rotation = 2.47139
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
