@@ -15,7 +15,6 @@ func _ready() -> void:
 #var current_letter_index: int = -1
 #
 #
-#
 #func _ready():
 #	randomize()
 #	spawn_enemy()
@@ -70,6 +69,7 @@ func spawn_enemy_attack() -> void:
 	var enemy_attack_container = $enemy_attack_container
 	var positions = spawn_container.get_children()
 	var index = randi() % positions.size()
-	
+
 	enemy_attack_container.add_child(enemy_attack_instance)
 	enemy_attack_instance.global_position = positions[index].global_position
+	enemy_attack_instance.connect("attack_hit", $InScope/Player, "_on_enemy_attack_attack_hit")
